@@ -1,473 +1,346 @@
+/* =========================================================================
+   Portfólio Isabelle Trampusch
+   Estilo único do site. Organizado de cima para baixo:
+   1. Cores e medidas (variáveis)   6. Projetos (cartões)
+   2. Base                          7. Ferramentas (stack)
+   3. Menu fixo                     8. Contato (rodapé)
+   4. Botões e tags                 9. Páginas de projeto
+   5. Início e Sobre               10. Animações e celular
+   ========================================================================= */
 
-body{
+/* 1. Cores e medidas ----------------------------------------------------
+   Para mudar uma cor no site inteiro, troque só aqui. */
+:root {
+  --creme: #F7F6F3;   /* fundo (do site original) */
+  --tinta: #1E2619;   /* texto principal, um verde quase preto */
+  --musgo: #3F5036;   /* botão principal (do site original) */
+  --salvia: #556B5D;  /* rodapé (do site original) */
+  --bege: #D9C5A1;    /* detalhe (do site original) */
+  --lima: #D4EC7A;    /* cores vibrantes dos blocos */
+  --sol: #F6C744;
+  --lilas: #CFC0F5;
+  --cinza: #4D5547;   /* texto secundário */
 
-  background-color: #F7F6F3;
-  font-family: "Inter", sans-serif;
+  --raio: 28px;       /* cantos arredondados dos blocos grandes */
+  --margem: clamp(16px, 5vw, 64px); /* espaço nas laterais */
+  --largura: 1200px;  /* largura máxima do conteúdo */
+}
 
+/* 2. Base -------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 88px; } /* não esconde títulos atrás do menu */
+
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  background: var(--creme);
+  color: var(--tinta);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
 
-  h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  }
-
-  /* Código */
-  code, pre {
-  font-family: "JetBrains Mono", monospace;
-  }
-}
-/* Inicio */
-.hero{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64x;
-  align-items: center;
-}
-.hero h1 {
-  margin-left: 10px;
-  font-size: clamp(64px, 9vw, 130px);   /* mínimo 64px, cresce com a tela (9vw), máximo 130px */
-  line-height: 0.95;       /* aproxima as linhas */
-  letter-spacing: -3px;    /* aperta as letras (visual editorial) */
-}
-.hero h2{
-  margin: 25px;
-}
-
-.hero p{
-  margin: 50px;
-  color: #362c19;
-}
-
-/* Sobre */
-.about{
-  margin: 50px;
-  display: grid;
-  grid-template-columns: 5fr 5fr;
-  gap: 64x;
-  align-items: center;
-  min-height: 400px;
-}
-
-.about h1{
-  font-size: clamp(32px, 9vw, 64px);  
-  line-height: 0.95;       /* aproxima as linhas */
-  letter-spacing: -3px;    /* aperta as letras (visual editorial) */
-}
-
-.header{
-  margin-left: 50px;
-}
-.eyebrow {
-  font-family: "JetBrains Mono", monospace;
-  text-transform: uppercase;   /* tudo em maiúscula */
-  letter-spacing: 6px;         /* espaço largo entre letras */
-  font-size: 16px;
-  color: #5a5a5a;
-  
-}
-
-/* Botões */
-.actions {
-  margin: 50px;
-  display: flex;   /* coloca os dois lado a lado */
-  gap: 16px;       /* espaço entre eles */
-}
-
-
-
-.btn {
-  padding: 16px 28px;        /* tamanho interno do botão */
-  border-radius: 10px;       /* cantos arredondados */
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;     /* tira o sublinhado se for <a> */
-  border: 1px solid transparent;
-}
-
-.btn-primary {
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 16px 28px;
-  border-radius: 10px;
-  background: #3f5036;
-  color: #fff;
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background: #2d3723;
-}
-
-.btn-secundary{
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 16px 28px;
-  border-radius: 10px;
-  background:  #fff;
-  color:#344029;
-  text-decoration: none;
-}
-
-.btn-secundary:hover{
-  background-color: #3f5036;
-  color: #fff;
-}
-
-
-.btn-ghost {
-  background: transparent;   /* fundo vazio */
-  border-color: #d6d2c8;     /* só a borda cinza */
-  color: #1a1a1a;
-}
-/* Linha de divisão */
-hr {
-  border: none;              /* remove o estilo padrão feio */
-  border-top: 1px solid #e3e0d8;  /* linha fina e clara */
-  margin: 24px 0;            /* espaço acima e abaixo */
-}
-.linha{
-
-  width:100%;
-
-  height:2px;
-
-  margin:0px 0 0px;
-
-  background:#D9C5A1;
-
-}
-/* Stack técnica */
-.stack{
-  align-items: center;
-  margin: 50px;
-  min-height: 200px;
-}
-
-/* Cards de projetos */
-.projetos{
-  align-items: center;
-  margin: 50px;
-  min-height: 200px;
-}
-
-.cards{
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  align-items: center;
-      
-}
-   
-.cardStack{
-
-  align-items: center;
-  width:320px;
-
-  background:white;
-
-  padding-top: 1px;
-  padding: 20px;
-
-  border-radius:20px;
-
-  box-shadow:0px 8px 20px rgba(0,0,0,.08);
-
-}
-
-
-.cardProjeto{
-  width:320px;
-  height:420px;
-
-  background:white;
-
-  padding-top: 1px;
-  padding: 20px;
-
-  border-radius:20px;
-
-  box-shadow:0px 8px 20px rgba(0,0,0,.08);
-}
-.imgPrototipo{
-
-  width: 100%;
-  height: 280px;
-
-  margin: 20px auto;
-
-  background-image: url("../imagens/prototipo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-}
-.imgMecatronica{
-
-  width: 100%;
-  height: 280px;
-
-  margin: 20px auto;
-
-  background-image: url("../imagens/TCCMecatronicaI.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-}
-
-/* Contato */
-
-footer{
-  min-height: 400px;
-  background-color: #556B5D;
-}
-
-footer h1{
-  padding-top: 80px;
-  margin-left: 50px;
-  color:#F7F6F3 ;
-}
-
-footer p{
+  line-height: 1.05;
+  letter-spacing: -0.02em;
   margin: 0;
-  color:#F7F6F3 ;
 }
 
-footer h3{
-  padding-top: 80px;
-  margin-left: 50px;
-  color:#F7F6F3 ;
+img, video { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+
+.sem-quebra { white-space: nowrap; } /* impede a quebra de linha no meio da palavra */
+
+code, pre { font-family: "JetBrains Mono", monospace; font-size: 0.9em; }
+
+/* Contorno visível para quem navega com teclado (Tab) */
+:focus-visible { outline: 3px solid var(--musgo); outline-offset: 3px; border-radius: 6px; }
+
+/* Link escondido "Pular para o conteúdo": aparece só ao apertar Tab */
+.pular {
+  position: absolute; left: 16px; top: -60px; z-index: 100;
+  background: var(--tinta); color: var(--creme); padding: 10px 16px; border-radius: 10px;
+}
+.pular:focus { top: 12px; }
+
+/* Caixa que centraliza o conteúdo e dá margem nas laterais */
+.container { width: min(100% - 2 * var(--margem), var(--largura)); margin-inline: auto; }
+
+.secao { padding-block: clamp(64px, 10vw, 128px); }
+
+.secao-titulo { font-size: clamp(2.5rem, 7vw, 4.5rem); margin-bottom: 40px; }
+
+/* Rótulo pequeno em fonte mono (marca do site original) */
+.rotulo {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--cinza);
+  margin: 0 0 16px;
 }
 
-/* Icones */
+/* 3. Menu fixo ----------------------------------------------------------- */
+.menu {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  background: rgb(247 246 243 / 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e3e0d8;
+}
+.menu .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 
-.fa-phone,
-.fa-linkedin,
-.fa-github,
-.fa-envelope{
-  font-size: 40px;
-  color: #F7F6F3;
-  align-items: center;
-  margin-left: 50px;
+.menu-marca {
+  font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.25rem;
+  text-decoration: none; display: flex; align-items: center; gap: 10px;
+}
+.menu-marca::before { /* bolinha colorida antes do nome */
+  content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--sol);
+  box-shadow: 10px 0 0 var(--lima);
+  margin-right: 10px;
 }
 
-.contato-item{
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.menu-links { display: flex; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.menu-links a {
+  display: block; padding: 8px 16px; border-radius: 999px;
+  text-decoration: none; font-weight: 500;
+  transition: background-color .2s;
+}
+.menu-links a:hover { background: var(--lima); }
+
+/* Botão "Menu" só aparece no celular (ver seção 10) */
+.menu-botao {
+  display: none;
+  font: inherit; font-weight: 600; color: var(--creme); background: var(--tinta);
+  border: 0; border-radius: 999px; padding: 8px 18px; cursor: pointer;
 }
 
-.contato-item a{
-  color: #F7F6F3;
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: 500;
+/* 4. Botões e tags ------------------------------------------------------- */
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.botao {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 26px; border-radius: 999px;
+  font-weight: 600; text-decoration: none;
+  border: 2px solid var(--tinta);
+  transition: transform .2s, background-color .2s, color .2s;
+}
+.botao:hover { transform: translateY(-2px); }
+.botao-principal { background: var(--musgo); border-color: var(--musgo); color: #fff; }
+.botao-principal:hover { background: var(--tinta); border-color: var(--tinta); }
+.botao-secundario { background: transparent; color: var(--tinta); }
+.botao-secundario:hover { background: var(--tinta); color: var(--creme); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tags li {
+  background: #fff; color: var(--tinta);
+  padding: 4px 14px; border-radius: 999px;
+  font-size: 0.875rem; font-weight: 500;
 }
 
-.contato-item a:hover{
-  color: #d8d6d3;
-  text-decoration: underline;
+/* 5. Início e Sobre ------------------------------------------------------ */
+.inicio { padding-top: calc(72px + clamp(40px, 8vw, 96px)); padding-bottom: clamp(56px, 8vw, 96px); }
+
+.inicio-grade { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+
+.inicio-ola { font-family: "Space Grotesk", sans-serif; font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; margin: 0 0 8px; }
+
+/* O nome gigante: a marca registrada do site */
+.inicio h1 {
+  font-size: clamp(3.5rem, 11vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  margin-bottom: 28px;
 }
 
-/* telas de Projetos */
+.inicio-resumo { font-size: clamp(1.125rem, 2vw, 1.375rem); max-width: 32ch; margin: 0 0 36px; color: var(--cinza); }
 
-.projetoTitulo{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+/* Composição de formas coloridas ao lado do nome.
+   Cada forma mostra uma das áreas que eu uno: automação e software. */
+.formas {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  aspect-ratio: 1; max-width: 420px; width: 100%; justify-self: end;
 }
-.projetoTitulo h1 {
-  margin-left: 10px;
-  font-size: clamp(32px, 9vw, 65px);   /* mínimo 64px, cresce com a tela (9vw), máximo 130px */
-  line-height: 0.95;       /* aproxima as linhas */
-  letter-spacing: -3px;    /* aperta as letras (visual editorial) */
+.forma {
+  display: grid; place-items: center; text-align: center;
+  font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: clamp(0.875rem, 1.6vw, 1.125rem);
+  padding: 8px;
 }
-.projetoTitulo h2{
-  margin: 25px;
+.forma-1 { background: var(--lima); border-radius: 999px 999px 999px 0; grid-column: span 2; }
+.forma-2 { background: var(--musgo); color: #fff; border-radius: 50%; }
+.forma-3 { background: var(--lilas); border-radius: 0 50% 50% 50%; }
+.forma-4 { background: var(--sol); border-radius: var(--raio); grid-column: span 2; grid-row: span 2; font-size: clamp(1.25rem, 3vw, 2rem); }
+.forma-5 { background: var(--bege); border-radius: 50% 50% 0 50%; }
+
+.sobre-grade { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
+.sobre-destaque { font-family: "Space Grotesk", sans-serif; font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.2; font-weight: 500; margin: 0 0 24px; }
+.sobre-texto p { max-width: 62ch; }
+
+/* 6. Projetos (cartões) ---------------------------------------------------- */
+.projetos-lista { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; list-style: none; margin: 0; padding: 0; }
+
+.cartao {
+  position: relative; /* deixa o cartão inteiro clicável (ver .cartao-link::after) */
+  display: flex; flex-direction: column; gap: 20px;
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: var(--raio);
+  transition: transform .25s ease;
 }
-.projetoTitulo p{
-  margin-left: 50px;
+.cartao:hover { transform: translateY(-6px) rotate(-0.4deg); }
+.cartao:focus-within { outline: 3px solid var(--tinta); outline-offset: 4px; }
+
+/* Cartão grande que ocupa as duas colunas (use em projetos de destaque) */
+.cartao-largo { grid-column: 1 / -1; }
+.cartao-largo .cartao-imagem { aspect-ratio: 21 / 9; }
+
+/* Cores dos cartões: use uma destas classes em cada cartão */
+.cor-sol   { background: var(--sol); }
+.cor-lilas { background: var(--lilas); }
+.cor-lima  { background: var(--lima); }
+.cor-bege  { background: var(--bege); }
+.cor-musgo { background: var(--musgo); color: #fff; }
+.cor-musgo .cartao-tipo, .cor-musgo figcaption { color: #E8EBDF; }
+
+.cartao-imagem {
+  aspect-ratio: 16 / 10; overflow: hidden;
+  border-radius: calc(var(--raio) - 10px);
+  background: var(--creme);
 }
-.meca{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+.cartao-imagem img { width: 100%; height: 100%; object-fit: cover; object-position: top left; transition: transform .4s ease; }
+.cartao:hover .cartao-imagem img { transform: scale(1.03); }
+.cartao-imagem.inteira img { object-fit: contain; object-position: center; padding: 12px; background: #fff; } /* mostra a imagem toda (diagramas) */
+.cartao-imagem.centro img { object-position: center; } /* corta pelo meio (fotos) */
+
+.cartao-tipo { font-size: 0.875rem; font-weight: 500; margin: 0; color: var(--cinza); }
+.cartao h3 { font-size: clamp(1.5rem, 3vw, 2.125rem); }
+.cartao-link { text-decoration: none; }
+.cartao-link::after { content: ""; position: absolute; inset: 0; border-radius: var(--raio); } /* área de clique */
+.cartao-link:focus-visible { outline: none; }
+
+/* 7. Ferramentas (stack) ---------------------------------------------------- */
+.stack-grade { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.stack-grupo { background: #fff; border-radius: var(--raio); padding: 28px; border-top: 6px solid var(--bege); }
+.stack-grupo:nth-child(2) { border-top-color: var(--lima); }
+.stack-grupo:nth-child(3) { border-top-color: var(--lilas); }
+.stack-grupo:nth-child(4) { border-top-color: var(--sol); }
+.stack-grupo h3 { font-size: 1.375rem; margin-bottom: 16px; }
+.stack-grupo ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.stack-grupo li { display: flex; align-items: center; gap: 12px; font-weight: 500; }
+.stack-grupo i { width: 24px; text-align: center; font-size: 1.25rem; color: var(--musgo); }
+
+/* 8. Contato (rodapé) ----------------------------------------------------- */
+.contato { background: var(--salvia); color: var(--creme); border-radius: var(--raio) var(--raio) 0 0; }
+.contato h2 { font-size: clamp(2.5rem, 7vw, 4.5rem); margin-bottom: 40px; }
+.contato-lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.contato-lista a {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px; border-radius: 20px;
+  background: rgb(0 0 0 / 0.14); /* fundo um pouco mais escuro: garante contraste do texto */
+  color: var(--creme); text-decoration: none; font-size: 1.125rem; font-weight: 500;
+  overflow-wrap: anywhere;
+  transition: background-color .2s, color .2s;
 }
+.contato-lista a:hover { background: var(--creme); color: var(--tinta); }
+.contato-lista i { font-size: 1.75rem; width: 32px; text-align: center; }
+.contato :focus-visible { outline-color: var(--sol); }
+.rodape-final { margin: 64px 0 0; padding-bottom: 32px; font-size: 0.9375rem; }
 
-.meca video{
-  position: absolute;
-  top: 50%;
-  left: 50%;
+/* 9. Páginas de projeto ---------------------------------------------------- */
+.projeto-topo { padding-top: calc(72px + clamp(40px, 7vw, 88px)); padding-bottom: 40px; }
+.projeto-topo h1 { font-size: clamp(2.5rem, 7vw, 5.5rem); letter-spacing: -0.04em; max-width: 16ch; margin-bottom: 24px; }
+.projeto-resumo { font-size: clamp(1.125rem, 2vw, 1.375rem); max-width: 50ch; color: var(--cinza); margin: 0 0 28px; }
+.voltar { display: inline-block; margin-bottom: 32px; font-weight: 600; }
 
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  object-fit: cover;
+/* Bloco colorido com a imagem principal */
+.projeto-capa { border-radius: var(--raio); padding: clamp(16px, 4vw, 48px); }
+.projeto-capa img, .projeto-capa video { border-radius: calc(var(--raio) - 10px); width: 100%; background: #fff; }
 
-  transform: translate(-50%, -50%);
-}
+.projeto-corpo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
 
-.prototipo img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+/* Ficha técnica (lateral) */
+.ficha { background: #fff; border-radius: var(--raio); padding: 28px; position: sticky; top: 96px; }
+.ficha dl { margin: 0; display: grid; gap: 18px; }
+.ficha dt { font-family: "JetBrains Mono", monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cinza); }
+.ficha dd { margin: 4px 0 0; font-weight: 500; }
 
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  object-fit: cover;
+.texto { max-width: 68ch; }
+.texto h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); margin: 56px 0 16px; }
+.texto h2:first-child { margin-top: 0; }
+.texto ul { padding-left: 1.2em; }
+.texto li + li { margin-top: 6px; }
+.texto pre { background: var(--tinta); color: #E8EBDF; padding: 20px; border-radius: 16px; overflow-x: auto; line-height: 1.5; }
+.texto :not(pre) > code { background: #fff; padding: 2px 6px; border-radius: 6px; }
 
-  transform: translate(-50%, -50%);
-}
+.tabela-rolagem { overflow-x: auto; }
+.texto table { border-collapse: collapse; width: 100%; background: #fff; border-radius: 16px; overflow: hidden; font-size: 0.9375rem; }
+.texto th, .texto td { text-align: left; padding: 10px 14px; border-bottom: 1px solid #e3e0d8; }
+.texto th { background: var(--lilas); }
 
-.conteudo{
-  position: relative;
-  z-index: 1;
-}
+/* Figuras com legenda */
+.galeria { display: grid; gap: 40px; }
+figure { margin: 0; }
+figure img { border-radius: 18px; border: 1px solid #e3e0d8; background: #fff; }
+figcaption { margin-top: 10px; font-size: 0.9375rem; color: var(--cinza); }
 
-.descricao{
-  margin: 50px;
-  display: grid;
-  grid-template-columns: 5fr 5fr;
-  gap: 64x;
-  align-items: center;
-  min-height: 400px;
-}
-
-.descricao h1{
-  font-size: clamp(32px, 9vw, 64px);
-  line-height: 0.95;       /* aproxima as linhas */
-  letter-spacing: -3px;    /* aperta as letras (visual editorial) */
-}
-
-/* Responsivo (mobile/tablet) */
-
-@media (max-width: 900px) {
-  .hero,
-  .about,
-  .descricao,
-  .projetoTitulo {
-    grid-template-columns: 1fr;
-  }
-
-  .about,
-  .descricao {
-    min-height: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    margin-left: 24px;
-  }
-
-  .hero h1 {
-    margin-left: 0;
-  }
-
-  .hero h2 {
-    margin: 16px 24px 0;
-  }
-
-  .hero p {
-    margin: 16px 24px;
-  }
-
-  .actions {
-    margin: 24px;
-    flex-wrap: wrap;
-  }
-
-  .about {
-    margin: 24px;
-    gap: 24px;
-  }
-
-  .stack {
-    margin: 24px;
-  }
-
-  .projetos {
-    margin: 24px;
-  }
-
-  .cards {
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .cardStack,
-  .cardProjeto,
-  .cardProjetoMec {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .descricao {
-    margin: 24px;
-    gap: 24px;
-  }
-
-  .projetoTitulo {
-    gap: 24px;
-  }
-
-  .projetoTitulo h1 {
-    margin-left: 0;
-  }
-
-  .projetoTitulo p {
-    margin-left: 24px;
-  }
-
-  .meca {
-    height: 75vh;
-  }
-
-  footer h1,
-  footer h3 {
-    margin-left: 24px;
-    padding-top: 48px;
-  }
-
-  .fa-phone,
-  .fa-linkedin,
-  .fa-github,
-  .fa-envelope {
-    margin-left: 24px;
-    font-size: 32px;
-  }
+.imagem-pendente {
+  display: grid; place-items: center; min-height: 200px; padding: 24px; text-align: center;
+  border: 2px dashed var(--bege); border-radius: 18px; color: var(--cinza);
 }
 
-@media (max-width: 480px) {
-  .hero h1 {
-    letter-spacing: -1px;
-  }
+.observacao { margin-top: 56px; font-size: 0.9375rem; color: var(--cinza); border-top: 1px solid #e3e0d8; padding-top: 16px; }
 
-  .about h1,
-  .descricao h1 {
-    letter-spacing: -1px;
-  }
+/* 10. Animações e celular --------------------------------------------------- */
 
-  .actions {
-    flex-direction: column;
-  }
+/* Formas do início "surgem" uma vez ao carregar */
+@keyframes surgir { from { opacity: 0; transform: scale(.6) rotate(-8deg); } }
+.forma { animation: surgir .6s cubic-bezier(.3, 1.4, .5, 1) backwards; }
+.forma-2 { animation-delay: .08s; }
+.forma-3 { animation-delay: .16s; }
+.forma-4 { animation-delay: .24s; }
+.forma-5 { animation-delay: .32s; }
 
-  .btn-primary,
-  .btn-secundary {
-    text-align: center;
-    width: 100%;
-  }
+/* Cartões aparecem ao rolar. A classe .js só existe se o JavaScript rodar,
+   então sem JavaScript tudo continua visível. */
+.js .revelar { opacity: 0; transform: translateY(32px); transition: opacity .6s ease, transform .6s ease; }
+.js .revelar.visivel { opacity: 1; transform: none; }
 
-  .meca {
-    height: 86vh;
-  }
+/* Quem pede "menos movimento" no sistema não vê animação nenhuma */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js .revelar { opacity: 1; transform: none; }
+  .cartao:hover, .botao:hover { transform: none; }
+}
 
-  .contato-item a {
-    font-size: 18px;
+/* Tablet */
+@media (max-width: 1024px) {
+  .stack-grade { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .inicio-grade, .sobre-grade, .projeto-corpo { grid-template-columns: minmax(0, 1fr); } /* minmax(0,...) deixa a coluna encolher no celular */
+  .formas { justify-self: start; max-width: 340px; }
+  .ficha { position: static; }
+}
+
+/* Celular */
+@media (max-width: 680px) {
+  .menu-botao { display: block; }
+  .menu-links {
+    display: none; /* escondido até apertar "Menu" */
+    position: absolute; top: 72px; left: 0; right: 0;
+    flex-direction: column; padding: 12px var(--margem) 20px;
+    background: var(--creme); border-bottom: 1px solid #e3e0d8;
   }
+  .menu-links.aberto { display: flex; }
+  .menu-links a { padding: 12px 16px; }
+
+  .projetos-lista, .contato-lista, .stack-grade { grid-template-columns: 1fr; }
+  .cartao-largo .cartao-imagem { aspect-ratio: 16 / 10; }
+  .formas { max-width: 260px; }
+  .sobre-grade { gap: 0; }
+  .contato-lista a { font-size: 1rem; padding: 16px; gap: 12px; }
+  .botao { flex: 1 1 auto; justify-content: center; }
+  .rotulo { letter-spacing: 0.15em; }
 }
