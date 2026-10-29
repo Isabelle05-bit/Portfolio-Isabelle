@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agente de IA para chamados de suporte | Isabelle Trampusch</title>
+  <meta name="description" content="Agente de IA que padroniza o registro dos chamados de suporte e monta uma base de consulta de falhas já resolvidas.">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Ícones: carregam sem travar a página (media="print" troca para "all" ao terminar) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="icon" href="assets/imagens/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="menu">
+    <nav class="container" aria-label="Principal">
+      <a class="menu-marca" href="index.html">Isabelle T.</a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links">Menu</button>
+      <ul class="menu-links" id="menu-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="index.html#ferramentas">Ferramentas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- TOPO: título, resumo e tags -->
+    <section class="projeto-topo container">
+      <a class="voltar" href="index.html#projetos">Voltar aos projetos</a>
+      <p class="rotulo">Projeto no trabalho</p>
+      <h1>Agente de IA para registro e rastreabilidade de chamados de suporte</h1>
+      <ul class="tags" aria-label="Ferramentas">
+        <li>App Codex (ChatGPT)</li>
+        <li>Google Sheets</li>
+        <li>Trello</li>
+        <li>Obsidian</li>
+        <li>WhatsApp</li>
+      </ul>
+    </section>
+
+    <!-- IMAGEM PRINCIPAL -->
+    <div class="container">
+      <figure class="projeto-capa cor-sol">
+        <img src="assets/imagens/fluxoAgenteSup.webp" alt="Fluxo em seis etapas: chamado do cliente, agente de IA, registro do chamado, atendimento, encerramento e base de consulta. Em um novo chamado, o agente consulta a base e sugere falhas semelhantes já resolvidas." width="1856" height="602">
+        <figcaption>Fluxo do agente. Exemplo com dados fictícios.</figcaption>
+      </figure>
+    </div>
+
+    <!-- CORPO: ficha à esquerda, texto à direita -->
+    <section class="secao container projeto-corpo">
+      <aside class="ficha" aria-label="Ficha do projeto">
+        <dl>
+          <div><dt>Onde</dt><dd>Tridium, no meu trabalho como técnica</dd></div>
+          <div><dt>Meu papel</dt><dd>Concepção do fluxo, criação dos prompts do agente (abertura, encerramento e redação do suporte), organização das pastas e dos kanbans</dd></div>
+          <div><dt>Ferramentas</dt><dd>App Codex (ChatGPT, versão gratuita), Google Sheets, Trello, Obsidian, WhatsApp</dd></div>
+        </dl>
+      </aside>
+
+      <div class="texto">
+        <h2>O problema</h2>
+        <p>Na Tridium não existe uma equipe de suporte dedicada: os técnicos atendem os chamados junto com as demais atividades. Com isso, o registro variava de pessoa para pessoa e era difícil lembrar de falhas parecidas que já tinham acontecido.</p>
+
+        <h2>O que eu criei</h2>
+        <p>Criei um agente de IA que, a cada chamado novo, abre uma pasta com o nome do cliente e o número do INC e cria nela um arquivo <code>registro.md</code>. O agente atualiza esse arquivo a cada andamento e, no encerramento, registra causa, solução e responsável. Ao mesmo tempo, lança os dados na planilha de suporte e no Trello, sempre no mesmo formato. Como a empresa só disponibiliza o ChatGPT na versão gratuita, sem integração direta com essas ferramentas, o agente controla o navegador para preencher os dois.</p>
+        <p>Quando o chamado fecha, também exporto a conversa de WhatsApp com o cliente e guardo na base. Alimentei essa base com conversas de chamados anteriores ao sistema, para que o agente consiga consultar o histórico. O app Codex e o Obsidian apontam para a mesma pasta local, então tudo vira uma base de consulta para encontrar falhas semelhantes.</p>
+        <p>Também montei um kanban de chamados com colunas de status (Aberto, Em atendimento, Efetuando testes, Aguardando interno, peça ou cliente, e Fechado), ligado ao kanban de atividades dos técnicos.</p>
+
+        <h2>Exemplo de uso</h2>
+        <p>Em um chamado de falha de comunicação Modbus em um inversor de frequência, o agente sugeriu chamados anteriores com falhas em inversores. Na base havia um documento de referência com os parâmetros de configuração desse mesmo equipamento. Pedi ao cliente que comparasse os parâmetros com essa referência, ele encontrou valores diferentes, corrigiu e o chamado foi encerrado. A causa e a solução ficaram registradas para consultas futuras.</p>
+
+        <h2>Situação atual</h2>
+        <p>O suporte tem quase 200 chamados no histórico. Desses, cerca de 20 já passaram pelo novo fluxo, e o restante entra na base pelas conversas e registros anteriores.</p>
+
+        <h2>Imagens</h2>
+        <div class="galeria">
+          <figure>
+            <img src="assets/imagens/kanban_sup.webp" alt="Kanban de chamados com as colunas Aberto, Em atendimento, Efetuando testes, Aguardando interno, Aguardando peça, Aguardando cliente e Fechado" width="916" height="247" loading="lazy">
+            <figcaption>Kanban de chamados. Exemplo com dados fictícios.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/imagens/planilhaSuporte_fict.webp" alt="Planilha de suporte com número, cliente, equipamento, causa, solução, status, observação e fim da tratativa" width="1917" height="656" loading="lazy">
+            <figcaption>Planilha de suporte. Exemplo com dados fictícios.</figcaption>
+          </figure>
+          <figure>
+            <!-- [completar] Coloque aqui a imagem do registro no Obsidian:
+                 <img src="assets/imagens/NOME-DO-ARQUIVO.png" alt="Registro de um chamado no Obsidian" width="LARGURA" height="ALTURA" loading="lazy">
+                 e apague a div "imagem-pendente" abaixo. -->
+            <div class="imagem-pendente">[completar] imagem do registro no Obsidian</div>
+            <figcaption>Registro real, dados da empresa ocultados.</figcaption>
+          </figure>
+        </div>
+
+        <p class="observacao">Projeto desenvolvido por mim no meu trabalho, com dados da empresa omitidos.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contato secao" id="contato">
+    <div class="container">
+      <h2>Vamos conversar?</h2>
+      <ul class="contato-lista">
+        <li><a href="https://wa.me/5551992481050" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>+55 51 99248-1050</a></li>
+        <li><a href="mailto:isabelletbernardo@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"><i class="fa-solid fa-envelope" aria-hidden="true"></i>isabelletbernardo@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/isabelle-trampusch-bernardo/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+        <li><a href="https://github.com/Isabelle05-bit" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub: Isabelle05-bit</a></li>
+      </ul>
+      <p class="rodape-final">Isabelle Trampusch Bernardo, 2026</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
