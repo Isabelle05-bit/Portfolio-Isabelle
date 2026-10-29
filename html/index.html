@@ -1,242 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Isabelle</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isabelle Trampusch | Portfólio</title>
+  <meta name="description" content="Portfólio de Isabelle Trampusch Bernardo, técnica de automação industrial e estudante de Análise e Desenvolvimento de Sistemas na PUCRS.">
+  <meta property="og:title" content="Isabelle Trampusch | Portfólio">
+  <meta property="og:description" content="Projetos de automação industrial e desenvolvimento de sistemas.">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Avisa o CSS que o JavaScript está ligado (usado nas animações) -->
+  <script>document.documentElement.classList.add("js");</script>
 
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Ícones: carregam sem travar a página (media="print" troca para "all" ao terminar) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="icon" href="assets/imagens/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <section id="inicio">
-    <div class="header">
-        <p class="eyebrown"> PORTFÓLIO • 2026</p>
-    </div>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-    <hr>
-    <div class="hero">
+  <!-- MENU FIXO NO TOPO -->
+  <header class="menu">
+    <nav class="container" aria-label="Principal">
+      <a class="menu-marca" href="#inicio">Isabelle T.</a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links">Menu</button>
+      <ul class="menu-links" id="menu-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#ferramentas">Ferramentas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- INÍCIO -->
+    <section class="inicio" id="inicio">
+      <div class="container inicio-grade">
         <div>
-            
-            <h2>Olá, me chamo</h2>
-            <h1>Isabelle Trampusch</h1>
-            
+          <p class="rotulo">Portfólio • 2026</p>
+          <p class="inicio-ola">Olá, me chamo</p>
+          <h1>Isabelle Trampusch</h1>
+          <p class="inicio-resumo">Técnica em automação industrial e estudante de Análise e Desenvolvimento de Sistemas na PUCRS.</p>
+          <div class="acoes">
+            <a class="botao botao-principal" href="#projetos">Ver projetos</a>
+            <a class="botao botao-secundario" href="assets/pdf/curriculo-Isabelle-Trampusch.pdf" download>Baixar currículo (PDF)</a>
+          </div>
         </div>
 
-        <div> </div>
-        
-    </div>
-    
-    <div class="actions">
-        <a href="assets/pdf/curriculo-Isabelle-Trampusch.pdf" download class="btn-primary">Download CV</a>
-        <a href="#contato" class="btn-secundary">Contato</a>
-        <a href="#projetos"class="btn-secundary">Projetos</a>
-    </div>
-    </section>
-    <hr>
-
-    <section id="Sobre">
-        <div class="about">
-            <div>
-                <h1>Sobre mim</h1>
-            </div>
-                
-            <div>
-                <p class="eyebrown">DESENVOLVEDORA DE SOFTWARE FULL STACK</p>
-                <br>
-                <p>Me chamo Isabelle Trampusch Bernardo, sou estudante de Análise e Desenvolvimento de Sistemas e formada em Técnico em Mecatrônica. Busco minha primeira oportunidade como Desenvolvedora de Software. Atualmente atuo como Técnica de Automação Industrial, desenvolvendo projetos de sistemas industriais, experiência que me proporcionou conhecimentos em lógica de programação, protocolos de comunicação, documentação de software e desenvolvimento de soluções.</p>
-            </div>
-
+        <!-- Formas coloridas decorativas: as áreas que eu uno -->
+        <div class="formas" aria-hidden="true">
+          <span class="forma forma-1">Automação</span>
+          <span class="forma forma-2">CLP</span>
+          <span class="forma forma-3">SQL</span>
+          <span class="forma forma-4">JavaScript</span>
+          <span class="forma forma-5">IA</span>
         </div>
+      </div>
     </section>
 
-<hr>
+    <!-- SOBRE -->
+    <section class="secao" id="sobre">
+      <div class="container sobre-grade">
+        <h2 class="secao-titulo">Sobre mim</h2>
+        <div class="sobre-texto">
+          <p class="sobre-destaque">Trabalho com automação industrial e estou construindo minha base em desenvolvimento de sistemas.</p>
+          <p>Me chamo Isabelle Trampusch Bernardo. Sou formada no Técnico em Mecatrônica e estudo Análise e Desenvolvimento de Sistemas na PUCRS. Hoje atuo como técnica de automação industrial, desenvolvendo projetos de sistemas industriais. Esse trabalho me deu prática com lógica de programação, protocolos de comunicação e documentação de software.</p>
+          <p>Estou em transição para a área de desenvolvimento e busco minha primeira oportunidade como desenvolvedora de software.</p>
+        </div>
+      </div>
+    </section>
 
-<section id="stack">
-<div class="stack">
-    <h2>Stack técnica</h2>
+    <!-- PROJETOS -->
+    <section class="secao" id="projetos">
+      <div class="container">
+        <h2 class="secao-titulo">Projetos</h2>
 
-        <div class="cards">
+        <!--
+          ============ COMO ADICIONAR UM PROJETO NOVO ============
+          1. Copie o bloco abaixo (de <li ...> até </li>) e cole dentro da
+             lista <ul class="projetos-lista">, na posição que quiser.
+          2. Troque:
+             - cor-lima: a cor do cartão (cor-sol, cor-lilas, cor-lima, cor-bege ou cor-musgo)
+             - a imagem (coloque o arquivo em assets/imagens/) e o texto do alt,
+               que descreve a imagem para quem não enxerga
+             - width e height: o tamanho real da imagem em pixels
+             - o tipo, o título, as tags e o link da página do projeto
+          3. Para um cartão que ocupa a linha inteira, acrescente "cartao-largo"
+             na classe: class="cartao cartao-largo cor-lima revelar"
+          4. Para criar a página do projeto, veja o arquivo COMO-EDITAR.md.
 
-            <div class="cardStack">
-                <div class="linha"></div>
-                <h3>Ferramentas</h3>
-            
-            
-                <i class="fa-brands fa-figma"></i>
-                <span class="badge">Figma</span>
-
-                <i class="fa-brands fa-git-alt"></i>
-                <span class="badge">git</span>
-                
+          <li class="cartao cor-lima revelar">
+            <div class="cartao-imagem">
+              <img src="assets/imagens/NOME-DA-IMAGEM.png" alt="Descreva a imagem" width="1200" height="800" loading="lazy">
             </div>
+            <p class="cartao-tipo">Projeto acadêmico</p>
+            <h3><a class="cartao-link" href="projeto-NOME.html">Título curto do projeto</a></h3>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Tecnologia 1</li>
+              <li>Tecnologia 2</li>
+            </ul>
+          </li>
+          =========================================================
+        -->
 
-            <div class="cardStack">
-                <div class="linha"></div>
-                <h3>Frontend</h3>
-                
-                <i class="fa-brands fa-js"></i>
-                <span class="badge">JavaScript</span>
+        <ul class="projetos-lista">
 
-                <i class="fa-brands fa-css3-alt"></i>
-                <span class="badge">CSS</span>
-
-                <i class="fa-brands fa-html5"></i>
-                <span class="badge">HTML</span>
-
-                <i class="fa-brands fa-react"></i>
-                <span class="badge">React</span>
-                
+          <li class="cartao cartao-largo cor-sol revelar">
+            <div class="cartao-imagem inteira">
+              <img src="assets/imagens/fluxoAgenteSup.webp" alt="Fluxo do agente de IA em seis etapas, do chamado do cliente até a base de consulta" width="1856" height="602">
             </div>
+            <p class="cartao-tipo">Projeto no trabalho</p>
+            <h3><a class="cartao-link" href="projeto-agente-ia.html">Agente de IA para chamados de suporte</a></h3>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>App Codex (ChatGPT)</li>
+              <li>Google Sheets</li>
+              <li>Trello</li>
+              <li>Obsidian</li>
+            </ul>
+          </li>
 
-            <div class="cardStack">
-                <div class="linha"></div>
-                <h3>Backend</h3>
-
-                <i class="fa-brands fa-python"></i>
-                <span class="badge">Python</span>
-
-                <i class="fa-brands fa-java"></i>
-                <span class="badge">Java</span>
-
-                <i class="fa-brands fa-node-js"></i>
-                <span class="badge">Node.js</span>
-                
+          <li class="cartao cor-lilas revelar">
+            <div class="cartao-imagem inteira">
+              <img src="assets/imagens/bd-modelo-logico.webp" alt="Modelo lógico do banco de dados da construtora, com sete tabelas" width="1125" height="885" loading="lazy">
             </div>
+            <p class="cartao-tipo">Projeto acadêmico</p>
+            <h3><a class="cartao-link" href="projeto-banco-de-dados.html">Banco de dados de uma construtora</a></h3>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Oracle SQL</li>
+              <li>brModelo</li>
+            </ul>
+          </li>
 
+          <li class="cartao cor-lima revelar">
+            <div class="cartao-imagem">
+              <img src="assets/imagens/estacionamento-terminal.webp" alt="Menu do sistema de estacionamento rodando no terminal" width="1200" height="1180" loading="lazy">
+            </div>
+            <p class="cartao-tipo">Projeto acadêmico</p>
+            <h3><a class="cartao-link" href="projeto-estacionamento.html">Gestão de estacionamento</a></h3>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>JavaScript</li>
+              <li>Node.js</li>
+              <li>Orientação a objetos</li>
+            </ul>
+          </li>
+
+          <li class="cartao cor-bege revelar">
+            <div class="cartao-imagem">
+              <img src="assets/imagens/prototipo.webp" alt="Telas do protótipo de e-commerce feito no Figma" width="667" height="812" loading="lazy">
+            </div>
+            <p class="cartao-tipo">Projeto acadêmico</p>
+            <h3><a class="cartao-link" href="projeto-prototipo-figma.html">Protótipo de <span class="sem-quebra">e-commerce</span> no Figma</a></h3>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>Figma</li>
+              <li>Requisitos</li>
+            </ul>
+          </li>
+
+          <li class="cartao cor-musgo revelar">
+            <div class="cartao-imagem centro">
+              <img src="assets/imagens/TCCmecatronicaI.webp" alt="Célula de triagem com braço robótico e esteira transportadora" width="902" height="1600" loading="lazy">
+            </div>
+            <p class="cartao-tipo">TCC do Técnico em Mecatrônica</p>
+            <h3><a class="cartao-link" href="projeto-tcc-mecatronica.html">Triagem automatizada com robô industrial</a></h3>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>CLP Siemens S7-1200</li>
+              <li>Ladder</li>
+              <li>Modbus TCP/IP</li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- FERRAMENTAS E LINGUAGENS -->
+    <section class="secao" id="ferramentas">
+      <div class="container">
+        <h2 class="secao-titulo">Ferramentas e linguagens</h2>
+        <!-- Para acrescentar um item, copie uma linha <li> do grupo certo.
+             Ícones: procure em fontawesome.com/icons (versão gratuita). -->
+        <div class="stack-grade">
+          <div class="stack-grupo">
+            <h3>Ferramentas</h3>
+            <ul>
+              <li><i class="fa-brands fa-figma" aria-hidden="true"></i>Figma</li>
+              <li><i class="fa-brands fa-git-alt" aria-hidden="true"></i>Git</li>
+              <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>brModelo</li>
+            </ul>
+          </div>
+          <div class="stack-grupo">
+            <h3>Frontend</h3>
+            <ul>
+              <li><i class="fa-brands fa-html5" aria-hidden="true"></i>HTML</li>
+              <li><i class="fa-brands fa-css3-alt" aria-hidden="true"></i>CSS</li>
+              <li><i class="fa-brands fa-js" aria-hidden="true"></i>JavaScript</li>
+              <li><i class="fa-brands fa-react" aria-hidden="true"></i>React</li>
+            </ul>
+          </div>
+          <div class="stack-grupo">
+            <h3>Backend</h3>
+            <ul>
+              <li><i class="fa-brands fa-java" aria-hidden="true"></i>Java</li>
+              <li><i class="fa-brands fa-node-js" aria-hidden="true"></i>Node.js</li>
+            </ul>
+          </div>
+          <div class="stack-grupo">
+            <h3>Banco de dados</h3>
+            <ul>
+              <li><i class="fa-solid fa-database" aria-hidden="true"></i>Oracle SQL</li>
+            </ul>
+          </div>
         </div>
-</div>
+      </div>
+    </section>
 
-<hr>
+  </main>
 
-
-</section>
-    
-<section id="projetos">
-
-<div class="projetos">
-    
-    <h2>Projetos selecionados:</h2>
-
-    <div class="cards">
-
-        <div class="cardProjeto">
-            <h3>Prototipação de software de alta fidelidade</h3>
-            <div class="imgPrototipo"></div>
-            <span class="badge">Figma</span>
-            <br>
-            <a href="projeto3.html">Acessar Projeto</a>
-        </div>
-
-        <div class="cardProjeto">
-            <h3>Sistema de Triagem Automatizada com Robô Industrial</h3>
-            <div class="imgMecatronica"></div>
-            <span class="badge">Robô e CLP usando ModbusTcp/Ip</span>
-            <br>
-            <a href="projeto4.html">Acessar Projeto</a>
-        </div>
-
-                <div class="cardProjeto">
-            
-            <h3>Projeto 3</h3>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <span class="badge">TECNOLOGIA</span>
-            <span class="badge">LINGUAGEM</span>
-            <span class="badge">LINGUAGEM</span>
-            <br>
-            <br>
-            <a href="projeto1.html">Acessar Projeto</a>
-        </div>
-
-        <div class="cardProjeto">
-            
-            <h3>Projeto 4</h3>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <span class="badge">TECNOLOGIA</span>
-            <span class="badge">LINGUAGEM</span>
-            <span class="badge">LINGUAGEM</span>
-            <br>
-            <br>
-            <a href="projeto2.html">Acessar Projeto</a>
-        </div>
-
+  <!-- CONTATO -->
+  <footer class="contato secao" id="contato">
+    <div class="container">
+      <h2>Vamos conversar?</h2>
+      <ul class="contato-lista">
+        <li>
+          <a href="https://wa.me/5551992481050" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>+55 51 99248-1050
+          </a>
+        </li>
+        <li>
+          <a href="mailto:isabelletbernardo@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>isabelletbernardo@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/isabelle-trampusch-bernardo/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Isabelle05-bit" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>GitHub: Isabelle05-bit
+          </a>
+        </li>
+      </ul>
+      <p class="rodape-final">Isabelle Trampusch Bernardo, 2026</p>
     </div>
-</div>
-</section>
+  </footer>
 
+  <script src="assets/js/main.js"></script>
 </body>
-<section id="contato">
-    <footer>
-        <h1>Entre em contato comigo:</h1>
-
-        <div class="contato-item">
-            <i class="fa-solid fa-phone"></i>
-
-            <a href="https://wa.me/5551992481050" target="_blank">
-            <p>+55 51 99248-1050</p>
-            </a>
-        </div>
-        <br>
-        <div class="contato-item">
-         
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/isabelle-trampusch-bernardo-7a17942a6/" target="_blank">
-            <p>Isabelle Trampusch Bernardo</p>
-            </a>
-        
-        </div>
-        <br>
-        <div class="contato-item">
-            <i class="fa-brands fa-github"></i>
-            <a href="https://github.com/Isabelle05-bit" target="_blank">
-            <p>Isabelle-05-bit</p>
-            </a>
-        </div>
-        <br>
-        <div class="contato-item">
-            <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:isabelletbernardo@gmail.com?subject=Contato%20sobre%20seu%20portfólio&body=Olá%20Isabelle,%0A%0AVi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade.%0A%0AAtenciosamente," target="_blank">
-            <p>isabelletbernardo@gmail.com</p>
-            </a>
-        </div>
-
-
-
-
-
-    </footer>
-</section>
 </html>
