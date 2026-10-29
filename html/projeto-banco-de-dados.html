@@ -1,69 +1,131 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automação</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco de dados de uma construtora | Isabelle Trampusch</title>
+  <meta name="description" content="Projeto acadêmico de banco de dados relacional em Oracle SQL: modelagem conceitual e lógica, criação das tabelas, carga de dados e consultas.">
 
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Ícones: carregam sem travar a página (media="print" troca para "all" ao terminar) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="icon" href="assets/imagens/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <section id="inicio1">
-        <div class="header">
-            <p class="eyebrown">ESTUDO DE CASO • 2026</p>
-        </div>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-        <hr>
-    <div class="projetoTitulo">
+  <header class="menu">
+    <nav class="container" aria-label="Principal">
+      <a class="menu-marca" href="index.html">Isabelle T.</a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links">Menu</button>
+      <ul class="menu-links" id="menu-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="index.html#ferramentas">Ferramentas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <h1>Titulo do projeto</h1>
-        <div class="meca">
+  <main id="conteudo">
 
-            <video autoplay muted loop playsinline>
-            <source src="assets/videos/TCCmecatronica.mp4" type="video/mp4">
-
-            </video>
-        </div>
-    </section>
-    </div>
-    
-    <hr>
-    <section id="descricao1">
-
-    <div class="descricao">
-        <div>
-            <h1>Descrição do projeto </h1>
-        </div>
-        <div>
-            <p class="eyebrown">TITULO DO PROJETO</p>
-            <br>
-            <p>
-                descrever projeto
-            </p>
-
-            <p class="eyebrown">O DESAFIO DO PROJETO</p>
-
-            <P>
-               descrever desafio
-            </P>
-
-            <p class="eyebrown">EQUIPE</p>
-
-            <P>
-               
-            </P>
-        </div>
-    </div>
-
+    <section class="projeto-topo container">
+      <a class="voltar" href="index.html#projetos">Voltar aos projetos</a>
+      <p class="rotulo">Projeto acadêmico • fev. 2026</p>
+      <h1>Banco de dados de uma construtora</h1>
+      <p class="projeto-resumo">Modelei e implementei do zero um banco relacional para controlar construtoras, obras, trabalhadores e os equipamentos locados para cada obra.</p>
+      <div class="acoes">
+        <a class="botao botao-principal" href="https://github.com/Isabelle05-bit/banco-de-dados-construtora" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Ver no GitHub</a>
+      </div>
     </section>
 
-    
+    <div class="container">
+      <figure class="projeto-capa cor-lilas">
+        <img src="assets/imagens/bd-modelo-logico.webp" alt="Modelo lógico com as tabelas Construtora, Telefone, Obra, Trabalhador, Utiliza, Equipamento e Categoria, ligadas por chaves estrangeiras" width="1125" height="885">
+        <figcaption>Modelo lógico feito no brModelo.</figcaption>
+      </figure>
+    </div>
 
+    <section class="secao container projeto-corpo">
+      <aside class="ficha" aria-label="Ficha do projeto">
+        <dl>
+          <div><dt>Disciplina</dt><dd>Banco de Dados, Análise e Desenvolvimento de Sistemas (PUCRS Online)</dd></div>
+          <div><dt>Quando</dt><dd>Fevereiro de 2026</dd></div>
+          <div><dt>Equipe</dt><dd>Individual</dd></div>
+          <div><dt>Tecnologias</dt><dd>Oracle Database (SQL Worksheet), brModelo</dd></div>
+        </dl>
+      </aside>
 
+      <div class="texto">
+        <h2>Objetivo</h2>
+        <p>O trabalho pedia um banco de dados para uma empresa de construção civil. Passei por todas as etapas: modelagem conceitual, modelagem lógica, criação das tabelas (DDL), carga de dados (DML) e consultas. Os dados de empresas, CPFs, CNPJs e endereços são fictícios.</p>
+
+        <h2>Regras de negócio</h2>
+        <ul>
+          <li>Uma construtora executa várias obras, e cada obra pertence a uma única construtora.</li>
+          <li>Cada trabalhador está alocado em uma única obra.</li>
+          <li>Uma obra usa vários equipamentos, e um equipamento pode ser usado em várias obras. Esse relacionamento N:N guarda as datas de início e fim de uso.</li>
+          <li>Cada equipamento pertence a uma categoria e tem um valor de diária.</li>
+          <li>Uma construtora pode ter vários telefones, por isso o telefone ganhou uma tabela própria.</li>
+        </ul>
+
+        <h2>Tabelas</h2>
+        <div class="tabela-rolagem">
+          <table>
+            <thead>
+              <tr><th scope="col">Tabela</th><th scope="col">Chave primária</th><th scope="col">Chave estrangeira</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Construtora</td><td>codigo</td><td></td></tr>
+              <tr><td>Telefone</td><td>telefone_PK</td><td>Construtora</td></tr>
+              <tr><td>Obra</td><td>codigo</td><td>Construtora</td></tr>
+              <tr><td>Trabalhador</td><td>cpf</td><td>Obra</td></tr>
+              <tr><td>Categoria</td><td>codigo</td><td></td></tr>
+              <tr><td>Equipamento</td><td>codigo</td><td>Categoria</td></tr>
+              <tr><td>Utiliza</td><td>equipamento + obra (composta)</td><td>Equipamento, Obra</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Uma das consultas</h2>
+        <p>A folha de pagamento de cada obra, somando o salário dos trabalhadores alocados nela:</p>
+<pre><code>SELECT o.nome AS obra, SUM(t.salario) AS folha_pagamento
+FROM Trabalhador t
+JOIN Obra o ON t.fk_Obra_codigo = o.codigo
+GROUP BY o.nome;</code></pre>
+        <p>As outras consultas usam filtro por salário, <code>JOIN</code> entre três tabelas com <code>ORDER BY</code> e uma subconsulta com <code>NOT IN</code> para achar equipamentos que nunca foram usados.</p>
+
+        <h2>Revisão depois da entrega</h2>
+        <p>Depois de entregar, revisei os scripts e encontrei duas diferenças entre o modelo lógico e a implementação. A chave estrangeira entre categoria e equipamento estava do lado errado, o que fazia cada categoria apontar para um único equipamento. E a construtora guardava só um telefone, embora o modelo previsse vários. Corrigi as duas e ajustei a ordem de criação das tabelas. A versão entregue continua no histórico do repositório.</p>
+
+        <h2>Modelo conceitual</h2>
+        <figure>
+          <img src="assets/imagens/bd-modelo-conceitual.webp" alt="Modelo entidade-relacionamento com as entidades Construtora, Obra, Trabalhador, Equipamento e Categoria" width="1113" height="701" loading="lazy">
+          <figcaption>Modelo entidade-relacionamento feito no brModelo.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contato secao" id="contato">
+    <div class="container">
+      <h2>Vamos conversar?</h2>
+      <ul class="contato-lista">
+        <li><a href="https://wa.me/5551992481050" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>+55 51 99248-1050</a></li>
+        <li><a href="mailto:isabelletbernardo@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"><i class="fa-solid fa-envelope" aria-hidden="true"></i>isabelletbernardo@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/isabelle-trampusch-bernardo/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+        <li><a href="https://github.com/Isabelle05-bit" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub: Isabelle05-bit</a></li>
+      </ul>
+      <p class="rodape-final">Isabelle Trampusch Bernardo, 2026</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
