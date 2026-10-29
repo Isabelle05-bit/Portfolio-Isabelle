@@ -1,0 +1,10 @@
+# Redirecionamentos do Netlify: endereços antigos levam às páginas novas.
+# Os links /projeto3 e /projeto4 estão nos projetos do LinkedIn.
+/projeto1        /projeto-banco-de-dados.html     301
+/projeto1.html   /projeto-banco-de-dados.html     301
+/projeto2        /projeto-estacionamento.html     301
+/projeto2.html   /projeto-estacionamento.html     301
+/projeto3        /projeto-prototipo-figma.html    301
+/projeto3.html   /projeto-prototipo-figma.html    301
+/projeto4        /projeto-tcc-mecatronica.html    301
+/projeto4.html   /projeto-tcc-mecatronica.html    301
