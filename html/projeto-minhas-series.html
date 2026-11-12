@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Séries | Isabelle Trampusch</title>
+  <meta name="description" content="Aplicação em React para cadastrar, pesquisar, editar e excluir as séries que você assistiu, com validação de formulário e navegação com React Router.">
+  <!-- Prévia ao compartilhar o link (LinkedIn, WhatsApp etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio-isabelle-trampusch.netlify.app/projeto-minhas-series">
+  <meta property="og:title" content="Minhas Séries | Isabelle Trampusch">
+  <meta property="og:description" content="Aplicação em React para cadastrar, pesquisar, editar e excluir as séries que você assistiu, com validação de formulário e navegação com React Router.">
+  <meta property="og:image" content="https://portfolio-isabelle-trampusch.netlify.app/assets/imagens/compartilhar/series.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Ícones: carregam sem travar a página (media="print" troca para "all" ao terminar) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="icon" href="assets/imagens/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="menu">
+    <nav class="container" aria-label="Principal">
+      <a class="menu-marca" href="index.html">Isabelle T.</a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links">Menu</button>
+      <ul class="menu-links" id="menu-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="index.html#ferramentas">Ferramentas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="projeto-topo container">
+      <a class="voltar" href="index.html#projetos">Voltar aos projetos</a>
+      <p class="rotulo">Fase 1 • 2026</p>
+      <h1>Minhas Séries</h1>
+      <p class="projeto-resumo">Uma aplicação em React para cadastrar e organizar as séries que você assistiu: cadastro, lista com busca, edição e exclusão.</p>
+      <div class="acoes">
+        <a class="botao botao-principal" href="https://github.com/Isabelle05-bit/projeto-series" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Ver no GitHub</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <figure class="projeto-capa cor-sol">
+        <img src="assets/imagens/series-lista.png" alt="Tela Minhas Séries com o campo de busca e três séries cadastradas, cada uma com título, categoria, temporadas, lançamento, diretor, produtora, data em que foi assistida e os botões Editar e Excluir" width="790" height="480">
+        <figcaption>A lista de séries com os dados de exemplo.</figcaption>
+      </figure>
+    </div>
+
+    <section class="secao container projeto-corpo">
+      <aside class="ficha" aria-label="Ficha do projeto">
+        <dl>
+          <div><dt>Etapa</dt><dd>Fase 1: front-end, sem back-end</dd></div>
+          <div><dt>Tecnologias</dt><dd>React, React Router, Vite, JavaScript, CSS</dd></div>
+          <div><dt>Qualidade</dt><dd>ESLint</dd></div>
+        </dl>
+      </aside>
+
+      <div class="texto">
+        <h2>O que a aplicação faz</h2>
+        <p>A aplicação tem cinco telas, ligadas por uma barra de navegação que destaca a página atual:</p>
+        <ul>
+          <li><strong>Início</strong> e <strong>Sobre</strong>, que apresentam a aplicação;</li>
+          <li><strong>Cadastro</strong>, com o formulário de uma nova série: título, número de temporadas, data de lançamento da temporada, diretor, produtora, categoria e data em que assistiu;</li>
+          <li><strong>Séries</strong>, com a lista de todas as séries, uma busca por título ou categoria e os botões de editar e excluir em cada item;</li>
+          <li><strong>Editar</strong>, que abre o mesmo formulário já preenchido com os dados da série.</li>
+        </ul>
+
+        <h2>Validação do formulário</h2>
+        <p>Antes de salvar, o formulário confere se todos os campos foram preenchidos, se a série tem pelo menos uma temporada e se a data em que foi assistida não é anterior à data de lançamento. Os campos com erro ficam destacados em vermelho, cada um com a sua mensagem, e o erro some assim que o campo é corrigido. Ao salvar, aparece uma mensagem de sucesso. Antes de excluir uma série, a aplicação pede confirmação.</p>
+
+        <h2>Como organizei o código</h2>
+        <p>A lista de séries fica em um único estado no componente <code>App</code>, junto com as funções de adicionar, atualizar e excluir. Esses dados e funções descem por props para as páginas, então todas as telas mostram sempre a mesma informação.</p>
+        <p>Separei a interface em três componentes: <code>NavBar</code>, <code>SerieForm</code> e <code>SerieList</code>. O <code>SerieForm</code> é usado tanto no cadastro quanto na edição. Ele recebe opcionalmente a série a ser editada, assim não precisei escrever dois formulários. A navegação usa o React Router, que troca de tela sem recarregar a página e por isso não perde os dados.</p>
+
+        <h2>Sobre esta fase</h2>
+        <p>Esta é a Fase 1 do projeto, focada no front-end. Ainda não há back-end: a aplicação começa com três séries de exemplo, e as alterações ficam só na memória, voltando ao estado inicial quando a página é recarregada.</p>
+
+        <h2>Outras telas</h2>
+        <div class="galeria">
+          <figure>
+            <img src="assets/imagens/series-home.png" alt="Tela inicial com a mensagem de boas-vindas e os botões Cadastrar série e Ver minhas séries" width="1470" height="320" loading="lazy">
+            <figcaption>Tela inicial.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/imagens/series-cadastro.png" alt="Formulário de cadastro com os campos título, número de temporadas, data de lançamento, diretor, produtora, categoria e data em que assistiu" width="1469" height="450" loading="lazy">
+            <figcaption>Formulário de cadastro.</figcaption>
+          </figure>
+        </div>
+
+        <h2>Como rodar</h2>
+        <p>Com o Node.js instalado, dentro da pasta do projeto:</p>
+<pre><code>npm install
+npm run dev</code></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contato secao" id="contato">
+    <div class="container">
+      <h2>Vamos conversar?</h2>
+      <ul class="contato-lista">
+        <li><a href="https://wa.me/5551992481050" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>+55 51 99248-1050</a></li>
+        <li><a href="mailto:isabelletbernardo@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"><i class="fa-solid fa-envelope" aria-hidden="true"></i>isabelletbernardo@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/isabelle-trampusch-bernardo/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+        <li><a href="https://github.com/Isabelle05-bit" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub: Isabelle05-bit</a></li>
+      </ul>
+      <p class="rodape-final">Isabelle Trampusch Bernardo, 2026</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
