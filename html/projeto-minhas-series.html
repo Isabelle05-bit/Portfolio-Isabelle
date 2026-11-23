@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minhas Séries | Isabelle Trampusch</title>
-  <meta name="description" content="Aplicação em React para cadastrar, pesquisar, editar e excluir as séries que você assistiu, com validação de formulário e navegação com React Router.">
+  <meta name="description" content="Aplicação em React para cadastrar, pesquisar, editar e excluir as séries que você assistiu, consumindo uma API REST com Axios, com Material UI e testes automatizados.">
   <!-- Prévia ao compartilhar o link (LinkedIn, WhatsApp etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://portfolio-isabelle-trampusch.netlify.app/projeto-minhas-series">
   <meta property="og:title" content="Minhas Séries | Isabelle Trampusch">
-  <meta property="og:description" content="Aplicação em React para cadastrar, pesquisar, editar e excluir as séries que você assistiu, com validação de formulário e navegação com React Router.">
+  <meta property="og:description" content="Aplicação em React para cadastrar, pesquisar, editar e excluir as séries que você assistiu, consumindo uma API REST com Axios, com Material UI e testes automatizados.">
   <meta property="og:image" content="https://portfolio-isabelle-trampusch.netlify.app/assets/imagens/compartilhar/series.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
@@ -45,9 +45,9 @@
 
     <section class="projeto-topo container">
       <a class="voltar" href="index.html#projetos">Voltar aos projetos</a>
-      <p class="rotulo">Projeto acadêmico • Fase 1 • 2026</p>
+      <p class="rotulo">Projeto acadêmico • Fases 1 e 2 • 2026</p>
       <h1>Minhas Séries</h1>
-      <p class="projeto-resumo">Uma aplicação em React para cadastrar e organizar as séries que você assistiu: cadastro, lista com busca, edição e exclusão.</p>
+      <p class="projeto-resumo">Uma aplicação em React para registrar as séries que você assistiu. Na Fase 2, ela passou a buscar e salvar os dados em uma API REST, ganhou um visual escuro inspirado em plataformas de streaming e testes automatizados.</p>
       <div class="acoes">
         <a class="botao botao-principal" href="https://github.com/Isabelle05-bit/projeto-series" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Ver no GitHub</a>
       </div>
@@ -55,8 +55,8 @@
 
     <div class="container">
       <figure class="projeto-capa cor-sol">
-        <img src="assets/imagens/series-lista.png" alt="Tela Minhas Séries com o campo de busca e três séries cadastradas, cada uma com título, categoria, temporadas, lançamento, diretor, produtora, data em que foi assistida e os botões Editar e Excluir" width="790" height="480">
-        <figcaption>A lista de séries com os dados de exemplo.</figcaption>
+        <img src="assets/imagens/series-fase2-home.jpg" alt="Tela inicial em tema escuro com o título Seu diário de séries, a última série assistida em destaque, os botões Ver minhas séries e Cadastrar série e uma fileira de pôsteres coloridos" width="1536" height="639">
+        <figcaption>A tela inicial da Fase 2, com a última série assistida vinda da API.</figcaption>
       </figure>
     </div>
 
@@ -64,49 +64,68 @@
       <aside class="ficha" aria-label="Ficha do projeto">
         <dl>
           <div><dt>Disciplina</dt><dd>Desenvolvimento Front-end, Análise e Desenvolvimento de Sistemas (PUCRS)</dd></div>
-          <div><dt>Etapa</dt><dd>Fase 1: front-end, sem back-end</dd></div>
+          <div><dt>Etapa</dt><dd>Fase 2: front-end integrado a uma API REST</dd></div>
           <div><dt>Equipe</dt><dd>Individual</dd></div>
-          <div><dt>Tecnologias</dt><dd>React, React Router, Vite, JavaScript, CSS</dd></div>
-          <div><dt>Qualidade</dt><dd>ESLint</dd></div>
+          <div><dt>Tecnologias</dt><dd>React, React Router, Material UI, Axios, Vite, JavaScript</dd></div>
+          <div><dt>Qualidade</dt><dd>Vitest, React Testing Library, ESLint</dd></div>
         </dl>
       </aside>
 
       <div class="texto">
         <h2>O que a aplicação faz</h2>
-        <p>A aplicação tem cinco telas, ligadas por uma barra de navegação que destaca a página atual:</p>
+        <p>A aplicação guarda as séries que a pessoa assistiu: título, número de temporadas, data de lançamento da temporada, diretor, produtora, categoria e data em que assistiu. Ela tem estas telas:</p>
         <ul>
-          <li><strong>Início</strong> e <strong>Sobre</strong>, que apresentam a aplicação;</li>
-          <li><strong>Cadastro</strong>, com o formulário de uma nova série: título, número de temporadas, data de lançamento da temporada, diretor, produtora, categoria e data em que assistiu;</li>
-          <li><strong>Séries</strong>, com a lista de todas as séries, uma busca por título ou categoria e os botões de editar e excluir em cada item;</li>
-          <li><strong>Editar</strong>, que abre o mesmo formulário já preenchido com os dados da série.</li>
+          <li><strong>Início</strong>, que recebe o usuário e mostra a última série assistida e fileiras de séries, no estilo das plataformas de streaming;</li>
+          <li><strong>Minhas Séries</strong>, com todas as séries em cartões, busca por título, categoria, diretor ou produtora, ordenação e os botões de editar e excluir em cada cartão;</li>
+          <li><strong>Cadastro</strong> e <strong>Editar</strong>, que usam o mesmo formulário (na edição, ele já vem preenchido);</li>
+          <li><strong>Sobre</strong>, que apresenta o projeto.</li>
         </ul>
 
-        <h2>Validação do formulário</h2>
-        <p>Antes de salvar, o formulário confere se todos os campos foram preenchidos, se a série tem pelo menos uma temporada e se a data em que foi assistida não é anterior à data de lançamento. Os campos com erro ficam destacados em vermelho, cada um com a sua mensagem, e o erro some assim que o campo é corrigido. Ao salvar, aparece uma mensagem de sucesso. Antes de excluir uma série, a aplicação pede confirmação.</p>
+        <h2>Integração com a API</h2>
+        <p>Todos os dados vêm da serieJournal-api, uma API REST fornecida pela disciplina. Usei o Axios para fazer as requisições: <code>GET</code> para listar e buscar uma série, <code>POST</code> para cadastrar, <code>PUT</code> para editar e <code>DELETE</code> para excluir. Por isso, as alterações continuam salvas mesmo depois de recarregar a página.</p>
+        <p>Concentrei todas as chamadas em um único arquivo, <code>services/api.js</code>. As páginas só chamam funções como <code>listarSeries()</code> ou <code>criarSerie()</code>, sem saber os detalhes do Axios. Enquanto espera a resposta, a tela mostra um indicador de carregamento. Se a API estiver fora do ar, aparece uma mensagem explicando o problema e um botão para tentar de novo.</p>
+        <p>Durante os testes, descobri que a API reinicia sozinha toda vez que grava os dados, então a requisição logo depois de salvar às vezes falhava. Resolvi isso com um interceptor do Axios, que tenta de novo automaticamente quando o servidor não responde.</p>
 
-        <h2>Como organizei o código</h2>
-        <p>A lista de séries fica em um único estado no componente <code>App</code>, junto com as funções de adicionar, atualizar e excluir. Esses dados e funções descem por props para as páginas, então todas as telas mostram sempre a mesma informação.</p>
-        <p>Separei a interface em três componentes: <code>NavBar</code>, <code>SerieForm</code> e <code>SerieList</code>. O <code>SerieForm</code> é usado tanto no cadastro quanto na edição. Ele recebe opcionalmente a série a ser editada, assim não precisei escrever dois formulários. A navegação usa o React Router, que troca de tela sem recarregar a página e por isso não perde os dados.</p>
+        <h2>Visual</h2>
+        <p>Usei o Material UI com um tema próprio: fundo quase preto, vermelho de destaque e títulos na fonte Bebas Neue, inspirados em plataformas de streaming. A barra de navegação fica transparente no topo e escurece ao rolar a página. Como a API não fornece imagens, criei um "pôster" para cada série com degradês gerados a partir do título, e o mesmo título sempre tem as mesmas cores.</p>
 
-        <h2>Sobre esta fase</h2>
-        <p>Esta é a Fase 1 do projeto, focada no front-end. Ainda não há back-end: a aplicação começa com três séries de exemplo, e as alterações ficam só na memória, voltando ao estado inicial quando a página é recarregada.</p>
+        <h2>Validação e feedback</h2>
+        <p>O formulário confere se todos os campos foram preenchidos, se o número de temporadas é um inteiro maior que zero e se a data em que a série foi assistida não é anterior ao lançamento nem futura. Os campos com erro ficam em vermelho com a sua mensagem. Antes de excluir, a aplicação pede confirmação, e cada ação mostra um aviso de sucesso ou de erro.</p>
 
-        <h2>Outras telas</h2>
+        <h2>Testes</h2>
+        <p>Escrevi 21 testes com Vitest e React Testing Library. Eles cobrem as regras de validação, a busca e a ordenação da lista, e as páginas de listagem, cadastro e edição, incluindo exclusão com confirmação e erro de conexão. A API é simulada nos testes, então eles rodam sem precisar do servidor.</p>
+
+        <h2>Telas da Fase 2</h2>
         <div class="galeria">
           <figure>
-            <img src="assets/imagens/series-home.png" alt="Tela inicial com a mensagem de boas-vindas e os botões Cadastrar série e Ver minhas séries" width="1470" height="320" loading="lazy">
-            <figcaption>Tela inicial.</figcaption>
+            <img src="assets/imagens/series-fase2-lista.jpg" alt="Tela Minhas Séries em tema escuro com campo de busca, seletor de ordenação e cartões de séries, cada um com pôster colorido, categoria, temporadas, lançamento, diretor, produtora e data em que foi assistida" width="1536" height="695" loading="lazy">
+            <figcaption>A lista de séries, com busca e ordenação.</figcaption>
           </figure>
           <figure>
-            <img src="assets/imagens/series-cadastro.png" alt="Formulário de cadastro com os campos título, número de temporadas, data de lançamento, diretor, produtora, categoria e data em que assistiu" width="1469" height="450" loading="lazy">
-            <figcaption>Formulário de cadastro.</figcaption>
+            <img src="assets/imagens/series-fase2-cadastro.jpg" alt="Formulário de cadastro em tema escuro com todos os campos destacados em vermelho e a mensagem Preencha corretamente os campos destacados" width="1536" height="695" loading="lazy">
+            <figcaption>O formulário de cadastro mostrando a validação.</figcaption>
+          </figure>
+        </div>
+
+        <h2>Como era na Fase 1</h2>
+        <p>A Fase 1 era só front-end: os dados ficavam na memória e voltavam às três séries de exemplo quando a página era recarregada. Na Fase 2, troquei esse estado local pelas requisições à API, substituí o CSS próprio pelo Material UI e acrescentei os testes.</p>
+        <div class="galeria">
+          <figure>
+            <img src="assets/imagens/series-lista.png" alt="Versão da Fase 1: tela clara com a lista de três séries de exemplo, campo de busca e botões Editar e Excluir" width="790" height="480" loading="lazy">
+            <figcaption>A lista de séries na Fase 1.</figcaption>
           </figure>
         </div>
 
         <h2>Como rodar</h2>
-        <p>Com o Node.js instalado, dentro da pasta do projeto:</p>
+        <p>A aplicação precisa da serieJournal-api rodando. Em um terminal:</p>
+<pre><code>git clone https://github.com/adsPucrsOnline/DesenvolvimentoFrontend.git
+cd DesenvolvimentoFrontend/serieJournal-api
+npm install
+npm start</code></pre>
+        <p>Em outro terminal, dentro da pasta do projeto:</p>
 <pre><code>npm install
 npm run dev</code></pre>
+        <p>Para rodar os testes, use <code>npm test</code>.</p>
       </div>
     </section>
 
