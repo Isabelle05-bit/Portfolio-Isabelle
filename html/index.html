@@ -37,6 +37,7 @@
       <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links">Menu</button>
       <ul class="menu-links" id="menu-links">
         <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#destaque">Destaque</a></li>
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#ferramentas">Ferramentas</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -83,10 +84,50 @@
       </div>
     </section>
 
+    <!-- EM DESTAQUE: os dois projetos principais. Para trocar, mova um cartão
+         daqui para a lista de Projetos (e vice-versa). -->
+    <section class="secao" id="destaque">
+      <div class="container">
+        <h2 class="secao-titulo">Em destaque</h2>
+        <ul class="projetos-lista">
+
+          <li class="cartao cartao-largo cor-musgo revelar">
+            <div class="cartao-imagem inteira">
+              <img src="assets/imagens/katara-fluxo.svg" alt="Fluxo do orçamento em cinco etapas: metragem, materiais sugeridos, resumo com total e lucro, PDF e envio pelo WhatsApp" width="1600" height="460">
+            </div>
+            <p class="cartao-tipo">Projeto para cliente • App Android</p>
+            <h3><a class="cartao-link" href="projeto-katara-app.html">Katara App: orçamentos de pintura no celular</a></h3>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>React Native</li>
+              <li>Expo</li>
+              <li>TypeScript</li>
+              <li>SQLite</li>
+              <li>Jest</li>
+            </ul>
+          </li>
+
+          <li class="cartao cartao-largo cor-sol revelar">
+            <div class="cartao-imagem inteira">
+              <img src="assets/imagens/series-fase2-lista.jpg" alt="Lista de séries em tema escuro, com busca, ordenação e cartões com pôsteres coloridos e botões de editar e excluir" width="1536" height="695" loading="lazy">
+            </div>
+            <p class="cartao-tipo">Projeto acadêmico • Desenvolvimento Front-end</p>
+            <h3><a class="cartao-link" href="projeto-minhas-series.html">Minhas Séries: React consumindo uma API REST</a></h3>
+            <ul class="tags" aria-label="Tecnologias">
+              <li>React</li>
+              <li>Material UI</li>
+              <li>Axios</li>
+              <li>Vitest</li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
     <!-- PROJETOS -->
     <section class="secao" id="projetos">
       <div class="container">
-        <h2 class="secao-titulo">Projetos</h2>
+        <h2 class="secao-titulo">Outros projetos</h2>
 
         <!--
           ============ COMO ADICIONAR UM PROJETO NOVO ============
@@ -182,14 +223,6 @@
             </ul>
           </li>
 
-          <li class="cartao cartao-largo cor-sol revelar">
-            <div class="cartao-imagem inteira">
-              <img src="assets/imagens/series-fase2-lista.jpg" alt="Lista de séries em tema escuro, com busca, ordenação e cartões com pôsteres coloridos e botões de editar e excluir" width="1536" height="695" loading="lazy">
-            </div>
-            <p class="cartao-tipo">Projeto acadêmico • Fases 1 e 2</p>
-            <h3><a class="cartao-link" href="projeto-minhas-series.html">Minhas Séries: React consumindo uma API REST</a></h3>
-            <ul class="tags" aria-label="Tecnologias">
-              <li>React</li>
               <li>Material UI</li>
               <li>Axios</li>
               <li>Vitest</li>
@@ -213,6 +246,8 @@
               <li><i class="fa-brands fa-figma" aria-hidden="true"></i>Figma</li>
               <li><i class="fa-brands fa-git-alt" aria-hidden="true"></i>Git</li>
               <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>brModelo</li>
+              <li><i class="fa-solid fa-vial-circle-check" aria-hidden="true"></i>Jest e Vitest</li>
+              <li><i class="fa-solid fa-broom" aria-hidden="true"></i>ESLint</li>
             </ul>
           </div>
           <div class="stack-grupo">
@@ -221,8 +256,10 @@
               <li><i class="fa-brands fa-html5" aria-hidden="true"></i>HTML</li>
               <li><i class="fa-brands fa-css3-alt" aria-hidden="true"></i>CSS</li>
               <li><i class="fa-brands fa-js" aria-hidden="true"></i>JavaScript</li>
+              <li><i class="fa-solid fa-code" aria-hidden="true"></i>TypeScript</li>
               <li><i class="fa-brands fa-react" aria-hidden="true"></i>React</li>
               <li><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Material UI</li>
+              <li><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>React Native e Expo</li>
             </ul>
           </div>
           <div class="stack-grupo">
@@ -236,6 +273,7 @@
             <h3>Banco de dados</h3>
             <ul>
               <li><i class="fa-solid fa-database" aria-hidden="true"></i>Oracle SQL</li>
+              <li><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>SQLite</li>
             </ul>
           </div>
         </div>

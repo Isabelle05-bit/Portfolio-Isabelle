@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katara App | Isabelle Trampusch</title>
+  <meta name="description" content="App Android em React Native e Expo que gera orçamentos de pintura em PDF, calcula o lucro e funciona offline, feito para um pintor autônomo de Cachoeirinha (RS).">
+  <!-- Prévia ao compartilhar o link (LinkedIn, WhatsApp etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio-isabelle-trampusch.netlify.app/projeto-katara-app">
+  <meta property="og:title" content="Katara App | Isabelle Trampusch">
+  <meta property="og:description" content="App Android em React Native e Expo que gera orçamentos de pintura em PDF, calcula o lucro e funciona offline, feito para um pintor autônomo de Cachoeirinha (RS).">
+  <meta property="og:image" content="https://portfolio-isabelle-trampusch.netlify.app/assets/imagens/compartilhar/katara-app.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Ícones: carregam sem travar a página (media="print" troca para "all" ao terminar) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="icon" href="assets/imagens/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="menu">
+    <nav class="container" aria-label="Principal">
+      <a class="menu-marca" href="index.html">Isabelle T.</a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-links">Menu</button>
+      <ul class="menu-links" id="menu-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#destaque">Destaque</a></li>
+        <li><a href="index.html#projetos">Projetos</a></li>
+        <li><a href="index.html#ferramentas">Ferramentas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="projeto-topo container">
+      <a class="voltar" href="index.html#destaque">Voltar aos projetos</a>
+      <p class="rotulo">Projeto para cliente • App Android • 2026</p>
+      <h1>Katara App</h1>
+      <p class="projeto-resumo">Um app Android que monta orçamentos de pintura em poucos toques, mostra quanto o pintor vai lucrar e gera o PDF para enviar ao cliente, tudo no celular e sem precisar de internet.</p>
+      <div class="acoes">
+        <a class="botao botao-principal" href="https://github.com/Isabelle05-bit/Katara-App" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>Ver no GitHub</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <figure class="projeto-capa cor-musgo">
+        <img src="assets/imagens/katara-fluxo.svg" alt="Fluxo do orçamento em cinco etapas: metragem em metros quadrados, materiais sugeridos pela receita do serviço, resumo com total e lucro, PDF gerado e envio pelo WhatsApp" width="1600" height="460">
+        <figcaption>O caminho de um orçamento, do m² ao WhatsApp.</figcaption>
+      </figure>
+    </div>
+
+    <section class="secao container projeto-corpo">
+      <aside class="ficha" aria-label="Ficha do projeto">
+        <dl>
+          <div><dt>Cliente</dt><dd>Katara Pinturas &amp; Efeitos, pintor autônomo de Cachoeirinha (RS)</dd></div>
+          <div><dt>Equipe</dt><dd>Individual (requisitos, modelagem, design e código)</dd></div>
+          <div><dt>Período</dt><dd>Desde novembro de 2026, cerca de 6 meses com 5 horas por semana</dd></div>
+          <div><dt>Tecnologias</dt><dd>React Native, Expo, TypeScript, Expo Router, SQLite, React Hook Form, Zod</dd></div>
+          <div><dt>Qualidade</dt><dd>Jest, React Native Testing Library, SQLite em memória, ESLint</dd></div>
+          <div><dt>Status</dt><dd>Primeiro APK instalado e testado no celular do cliente</dd></div>
+        </dl>
+      </aside>
+
+      <div class="texto">
+        <h2>O problema</h2>
+        <p>O cliente montava os orçamentos no Canva: copiava um modelo, digitava os serviços e os valores e fazia as contas por fora. Ele não tem notebook e tem pouca familiaridade com tecnologia. O app precisava gerar um orçamento com cara profissional em poucos toques, mostrar quanto ele vai lucrar e funcionar só no celular.</p>
+
+        <h2>O que o app faz</h2>
+        <ul>
+          <li><strong>Cadastros</strong> de clientes, funcionários, materiais, ferramentas e serviços, cada serviço com a sua receita de materiais;</li>
+          <li><strong>Orçamento guiado</strong>, com vários serviços e a metragem de cada um, materiais sugeridos e editáveis, equipe, ferramentas, desconto e um resumo fixo no rodapé que atualiza enquanto ele preenche;</li>
+          <li><strong>Status</strong> pendente, aprovado ou recusado. Aprovar gera um atendimento, que aguarda o agendamento;</li>
+          <li><strong>Dois PDFs</strong>: o do cliente, sem custos, e o interno, com custos e lucro;</li>
+          <li><strong>Painel</strong> com o previsto nos orçamentos aprovados do mês, o lucro e os pendentes;</li>
+          <li><strong>Backup</strong> para exportar e restaurar todos os dados.</li>
+        </ul>
+
+        <h2>Como organizei o trabalho</h2>
+        <p>O projeto não tem prazo do cliente, então defini meus próprios marcos. Dividi o trabalho em fatias verticais: em vez de terminar todo o banco e depois todas as telas, cada fatia entrega algo que funciona de ponta a ponta. O primeiro marco era o cliente gerar um PDF de verdade no celular dele. Ele foi cumprido em 18 de novembro de 2026, com o APK instalado e testado. Planejei cerca de 125 horas em oito fatias, com 5 horas de folga.</p>
+
+        <h2>Decisões que tomei</h2>
+
+        <h3>Do desktop para o Android</h3>
+        <p>Comecei o projeto como um app de desktop, com Tauri, Rust e SQLite. Conversando com o cliente, descobri que ele não tem notebook, só o celular. Refiz o plano para Android com React Native e Expo, aproveitando o que eu já sabia de React. Deixei o iOS de fora, porque ele usa Android. O app é entregue como APK, gerado pelo EAS Build, sem passar pela loja.</p>
+
+        <h3>Offline, com o banco no celular</h3>
+        <p>É um único usuário, que muitas vezes está numa obra sem internet boa. Um servidor traria custo de hospedagem e login sem resolver nenhum problema dele. Escolhi o SQLite dentro do celular, com migrações versionadas. O preço dessa escolha é o backup: criei botões para exportar e restaurar o banco inteiro, e o backup automático do Android fica como segunda camada.</p>
+
+        <h3>Dinheiro em centavos</h3>
+        <p>Somar valores com casas decimais em JavaScript gera erros como <code>0.1 + 0.2 = 0.30000000000000004</code>. Por isso todo valor é guardado em centavos, como número inteiro, e só vira reais na tela. A regra de arredondamento ficou definida nos testes: cada linha é arredondada para centavos antes da soma, e o desconto é arredondado uma única vez.</p>
+
+        <h3>O cálculo veio antes das telas</h3>
+        <p>O cálculo do total e do lucro é a parte em que um erro custa dinheiro ao cliente. Escrevi <code>calcularOrcamento</code> como uma função pura, sem tela e sem banco, usando TDD: primeiro o teste que falha, depois o código mínimo para passar, depois a limpeza. Os testes cobrem desconto sobre os serviços ou sobre o total, os modos de cobrança, orçamento sem ferramentas e lucro negativo. O banco também é testado: os repositórios rodam contra um SQLite em memória com as mesmas migrações do app. Hoje são mais de 100 testes.</p>
+
+        <h3>Orçamento antigo não muda</h3>
+        <p>Quando o preço de uma tinta sobe no catálogo, um orçamento enviado no mês passado não pode mudar de valor. Cada item guarda uma cópia do preço do momento em que entrou no orçamento. O total e o lucro também ficam gravados e são recalculados na mesma transação a cada alteração.</p>
+
+        <h3>Sugerir sem impor</h3>
+        <p>Para sugerir os materiais a partir da metragem, cada serviço tem uma receita: cada material é calculado por m² ou em quantidade fixa, arredondado para cima. A sugestão é sempre editável, porque o cliente conhece a obra melhor do que a fórmula.</p>
+
+        <h3>O que o cliente vê e o que entra no lucro</h3>
+        <p>Às vezes o pintor cobra a tinta à parte, às vezes só informa o valor, às vezes nem mostra. Em vez de criar uma regra para cada caso, cada orçamento tem um modo para materiais e outro para ferramentas: cobrado, informado ou oculto. O modo só decide o que aparece no PDF e o que o cliente paga. O custo entra no lucro sempre.</p>
+
+        <h3>PDF em HTML e o menu de compartilhar</h3>
+        <p>Descartei o jsPDF, que é feito para o navegador. Monto o PDF em HTML e CSS e converto com o <code>expo-print</code>, o que deixa o layout fácil de ajustar e o gerador fácil de testar: entram dados, sai texto. Para enviar, uso o menu de compartilhar do Android em vez da API do WhatsApp Business. O cliente escolhe o contato como já fazia, sem cadastro e sem custo. O PDF tem fundo branco, mesmo com o app escuro, para não gastar tinta se for impresso.</p>
+
+        <h3>Arquivar em vez de excluir</h3>
+        <p>Apagar um cliente ou um material quebraria os orçamentos antigos. Por isso nada é excluído: os cadastros são arquivados, somem das listas e continuam nos orçamentos que os usam. Também bloqueei mudanças de status que deixariam os dados inconsistentes, como voltar para pendente um orçamento cujo atendimento já começou, sempre com uma mensagem explicando o motivo.</p>
+
+        <h2>Uma decisão que precisei rever</h2>
+        <p>Ao planejar o painel, percebi que "aprovados do mês" exige a data de aprovação, e o banco não tinha essa coluna. Usar a data de criação colocaria um orçamento criado em outubro e aprovado em novembro no mês errado. Criei uma segunda migração com a coluna <code>aprovado_em</code>, em vez de editar a primeira. Essa é a regra do projeto para mudar o banco sem apagar os dados de quem já tem o app instalado.</p>
+
+        <h2>Próximos passos</h2>
+        <p>Depois da primeira versão: registrar pagamentos recebidos e despesas reais, mostrar a margem por serviço e atualizar os preços dos materiais pela internet.</p>
+
+        <h2>Telas</h2>
+        <!-- Para acrescentar uma tela: copie um bloco <figure> ... </figure>,
+             troque o arquivo, o alt, a legenda e o width/height reais da imagem. -->
+        <div class="galeria galeria-celular">
+          <figure>
+            <img src="assets/imagens/KataraApp-Inicio.png" alt="Tela Início em tema escuro com um cartão laranja mostrando o total aprovado no mês, o lucro líquido previsto, os cartões de valor em ferramentas e pendentes de resposta, o botão Novo orçamento e os orçamentos recentes, com o menu flutuante embaixo" width="720" height="1600" loading="lazy">
+            <figcaption>Início: o total aprovado no mês, o lucro previsto e os pendentes.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/imagens/KataraApp-Orcamentos.png" alt="Lista de orçamentos com busca por cliente, filtros Todos, Pendentes, Aprovados e Recusados, e cartões com cliente, número, data, valor e status" width="720" height="1600" loading="lazy">
+            <figcaption>Orçamentos com filtros por status.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/imagens/KataraApp-NovoOrcamento.png" alt="Passo 2 de 6 do novo orçamento: serviços Pintura interna e Massa corrida e lixamento com metragem, preço por metro quadrado e subtotal, e o rodapé fixo com total do cliente, custos e lucro líquido" width="720" height="1600" loading="lazy">
+            <figcaption>Novo orçamento, passo 2: o rodapé atualiza total, custos e lucro.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/imagens/KataraApp-PdfCliente.png" alt="Prévia do PDF do cliente em fundo branco, com logotipo, dados do cliente, tabelas de serviços, materiais e ferramentas, desconto, total e condições, e o botão Enviar" width="720" height="2400" loading="lazy">
+            <figcaption>Prévia do PDF do cliente, pronto para enviar.</figcaption>
+          </figure>
+        </div>
+
+        <h2>Como rodar</h2>
+<pre><code>git clone https://github.com/Isabelle05-bit/Katara-App.git
+cd Katara-App
+npm install
+npx expo start</code></pre>
+        <p>Para rodar os testes, use <code>npm test</code>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="contato secao" id="contato">
+    <div class="container">
+      <h2>Vamos conversar?</h2>
+      <ul class="contato-lista">
+        <li><a href="https://wa.me/5551992481050" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>+55 51 99248-1050</a></li>
+        <li><a href="mailto:isabelletbernardo@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio"><i class="fa-solid fa-envelope" aria-hidden="true"></i>isabelletbernardo@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/isabelle-trampusch-bernardo/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>
+        <li><a href="https://github.com/Isabelle05-bit" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub: Isabelle05-bit</a></li>
+      </ul>
+      <p class="rodape-final">Isabelle Trampusch Bernardo, 2026</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

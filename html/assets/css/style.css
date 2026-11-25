@@ -268,6 +268,7 @@ code, pre { font-family: "JetBrains Mono", monospace; font-size: 0.9em; }
 .texto { max-width: 68ch; }
 .texto h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); margin: 56px 0 16px; }
 .texto h2:first-child { margin-top: 0; }
+.texto h3 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); margin: 32px 0 10px; }
 .texto ul { padding-left: 1.2em; }
 .texto li + li { margin-top: 6px; }
 .texto pre { background: var(--tinta); color: #E8EBDF; padding: 20px; border-radius: 16px; overflow-x: auto; line-height: 1.5; }
@@ -281,6 +282,8 @@ code, pre { font-family: "JetBrains Mono", monospace; font-size: 0.9em; }
 /* Figuras com legenda */
 .galeria { display: grid; gap: 40px; }
 figure { margin: 0; }
+/* Prints de celular: lado a lado, em duas colunas */
+.galeria-celular { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
 figure img { border-radius: 18px; border: 1px solid #e3e0d8; background: #fff; }
 figcaption { margin-top: 10px; font-size: 0.9375rem; color: var(--cinza); }
 
